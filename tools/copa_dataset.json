@@ -1,0 +1,155 @@
+{
+  "artilheiros": [
+    { "posicao": 1,  "nome": "Miroslav Klose",    "pais": "Alemanha",   "gols": 16, "copas": [1998, 2002, 2006, 2010, 2014], "artilheiro_em": [2006] },
+    { "posicao": 2,  "nome": "Ronaldo Fenômeno",  "pais": "Brasil",     "gols": 15, "copas": [1994, 1998, 2002, 2006],       "artilheiro_em": [1998, 2002] },
+    { "posicao": 3,  "nome": "Gerd Müller",        "pais": "Alemanha",   "gols": 14, "copas": [1970, 1974],                  "artilheiro_em": [1970] },
+    { "posicao": 4,  "nome": "Just Fontaine",      "pais": "França",     "gols": 13, "copas": [1958],                        "artilheiro_em": [1958] },
+    { "posicao": 5,  "nome": "Pelé",               "pais": "Brasil",     "gols": 12, "copas": [1958, 1962, 1966, 1970],      "artilheiro_em": [] },
+    { "posicao": 6,  "nome": "Sandor Kocsis",      "pais": "Hungria",    "gols": 11, "copas": [1954],                        "artilheiro_em": [1954] },
+    { "posicao": 7,  "nome": "Jürgen Klinsmann",   "pais": "Alemanha",   "gols": 11, "copas": [1990, 1994, 1998],            "artilheiro_em": [] },
+    { "posicao": 8,  "nome": "Helmut Rahn",        "pais": "Alemanha",   "gols": 10, "copas": [1954, 1958],                  "artilheiro_em": [] },
+    { "posicao": 9,  "nome": "Teófilo Cubillas",   "pais": "Peru",       "gols": 10, "copas": [1970, 1978],                  "artilheiro_em": [] },
+    { "posicao": 10, "nome": "Gabriel Batistuta",  "pais": "Argentina",  "gols": 10, "copas": [1994, 1998, 2002],            "artilheiro_em": [] },
+    { "posicao": 11, "nome": "Gary Lineker",       "pais": "Inglaterra", "gols": 10, "copas": [1986, 1990],                  "artilheiro_em": [1986] },
+    { "posicao": 12, "nome": "Eusébio",            "pais": "Portugal",   "gols": 9,  "copas": [1966],                        "artilheiro_em": [1966] },
+    { "posicao": 13, "nome": "Ademir",             "pais": "Brasil",     "gols": 9,  "copas": [1950],                        "artilheiro_em": [1950] },
+    { "posicao": 14, "nome": "Leônidas da Silva",  "pais": "Brasil",     "gols": 8,  "copas": [1934, 1938],                  "artilheiro_em": [1938] },
+    { "posicao": 15, "nome": "Kylian Mbappé",      "pais": "França",     "gols": 12, "copas": [2018, 2022],                  "artilheiro_em": [2022] },
+    { "posicao": 16, "nome": "Thomas Müller",      "pais": "Alemanha",   "gols": 10, "copas": [2010, 2014, 2018],            "artilheiro_em": [2010] },
+    { "posicao": 17, "nome": "Rivaldo",            "pais": "Brasil",     "gols": 8,  "copas": [1998, 2002],                  "artilheiro_em": [] },
+    { "posicao": 18, "nome": "Neymar Jr.",         "pais": "Brasil",     "gols": 8,  "copas": [2010, 2014, 2018, 2022],      "artilheiro_em": [] },
+    { "posicao": 19, "nome": "Luka Modrić",        "pais": "Croácia",    "gols": 3,  "copas": [2006, 2014, 2018, 2022],      "artilheiro_em": [] },
+    { "posicao": 20, "nome": "Lionel Messi",       "pais": "Argentina",  "gols": 13, "copas": [2006, 2010, 2014, 2018, 2022],"artilheiro_em": [] }
+  ],
+
+  "campeoes": [
+    {
+      "pais": "Brasil",
+      "titulos": 5,
+      "conquistas": [
+        { "ano": 1958, "sede": "Suécia",       "estadio_final": "Råsunda Stadium (Solna)",          "adversario_final": "Suécia",   "placar": "5x2" },
+        { "ano": 1962, "sede": "Chile",        "estadio_final": "Estadio Nacional (Santiago)",       "adversario_final": "Tchecoslováquia", "placar": "3x1" },
+        { "ano": 1970, "sede": "México",       "estadio_final": "Estádio Azteca (Cidade do México)", "adversario_final": "Itália",   "placar": "4x1" },
+        { "ano": 1994, "sede": "EUA",          "estadio_final": "Rose Bowl (Los Angeles)",           "adversario_final": "Itália",   "placar": "0x0 (3x2 pên.)" },
+        { "ano": 2002, "sede": "Coreia/Japão", "estadio_final": "International Stadium (Yokohama)",  "adversario_final": "Alemanha", "placar": "2x0" }
+      ],
+      "artilheiro_historico": "Ronaldo Fenômeno",
+      "maior_jogador": "Pelé"
+    },
+    {
+      "pais": "Alemanha",
+      "titulos": 4,
+      "conquistas": [
+        { "ano": 1954, "sede": "Suíça",              "estadio_final": "Wankdorf Stadium (Berna)",           "adversario_final": "Hungria",  "placar": "3x2" },
+        { "ano": 1974, "sede": "Alemanha Ocidental", "estadio_final": "Olympiastadion (Munique)",           "adversario_final": "Holanda",  "placar": "2x1" },
+        { "ano": 1990, "sede": "Itália",             "estadio_final": "Stadio Olimpico (Roma)",             "adversario_final": "Argentina","placar": "1x0" },
+        { "ano": 2014, "sede": "Brasil",             "estadio_final": "Estádio do Maracanã (Rio de Janeiro)","adversario_final": "Argentina","placar": "1x0 (prorr.)" }
+      ],
+      "artilheiro_historico": "Miroslav Klose",
+      "maior_jogador": "Franz Beckenbauer"
+    },
+    {
+      "pais": "Itália",
+      "titulos": 4,
+      "conquistas": [
+        { "ano": 1934, "sede": "Itália",   "estadio_final": "Stadio Nazionale PNF (Roma)",        "adversario_final": "Tchecoslováquia", "placar": "2x1 (prorr.)" },
+        { "ano": 1938, "sede": "França",   "estadio_final": "Stade Olympique de Colombes (Paris)", "adversario_final": "Hungria",  "placar": "4x2" },
+        { "ano": 1982, "sede": "Espanha",  "estadio_final": "Estadio Santiago Bernabéu (Madrid)",  "adversario_final": "Alemanha", "placar": "3x1" },
+        { "ano": 2006, "sede": "Alemanha", "estadio_final": "Olympiastadion (Berlim)",              "adversario_final": "França",   "placar": "1x1 (5x3 pên.)" }
+      ],
+      "artilheiro_historico": "Paolo Rossi",
+      "maior_jogador": "Roberto Baggio"
+    },
+    {
+      "pais": "Argentina",
+      "titulos": 3,
+      "conquistas": [
+        { "ano": 1978, "sede": "Argentina", "estadio_final": "Estadio Monumental (Buenos Aires)",   "adversario_final": "Holanda",  "placar": "3x1 (prorr.)" },
+        { "ano": 1986, "sede": "México",    "estadio_final": "Estádio Azteca (Cidade do México)",   "adversario_final": "Alemanha", "placar": "3x2" },
+        { "ano": 2022, "sede": "Qatar",     "estadio_final": "Lusail Stadium (Lusail)",              "adversario_final": "França",   "placar": "3x3 (4x2 pên.)" }
+      ],
+      "artilheiro_historico": "Gabriel Batistuta",
+      "maior_jogador": "Diego Maradona"
+    },
+    {
+      "pais": "França",
+      "titulos": 2,
+      "conquistas": [
+        { "ano": 1998, "sede": "França",  "estadio_final": "Stade de France (Saint-Denis)",  "adversario_final": "Brasil",   "placar": "3x0" },
+        { "ano": 2018, "sede": "Rússia",  "estadio_final": "Estádio Luzhniki (Moscou)",      "adversario_final": "Croácia",  "placar": "4x2" }
+      ],
+      "artilheiro_historico": "Just Fontaine",
+      "maior_jogador": "Zinedine Zidane"
+    },
+    {
+      "pais": "Uruguai",
+      "titulos": 2,
+      "conquistas": [
+        { "ano": 1930, "sede": "Uruguai", "estadio_final": "Estádio Centenário (Montevidéu)", "adversario_final": "Argentina", "placar": "4x2" },
+        { "ano": 1950, "sede": "Brasil",  "estadio_final": "Estádio do Maracanã (Rio de Janeiro)", "adversario_final": "Brasil", "placar": "2x1" }
+      ],
+      "artilheiro_historico": "Héctor Scarone",
+      "maior_jogador": "José Nasazzi"
+    },
+    {
+      "pais": "Inglaterra",
+      "titulos": 1,
+      "conquistas": [
+        { "ano": 1966, "sede": "Inglaterra", "estadio_final": "Wembley Stadium (Londres)", "adversario_final": "Alemanha", "placar": "4x2 (prorr.)" }
+      ],
+      "artilheiro_historico": "Gary Lineker",
+      "maior_jogador": "Bobby Charlton"
+    },
+    {
+      "pais": "Espanha",
+      "titulos": 1,
+      "conquistas": [
+        { "ano": 2010, "sede": "África do Sul", "estadio_final": "Soccer City (Joanesburgo)", "adversario_final": "Holanda", "placar": "1x0 (prorr.)" }
+      ],
+      "artilheiro_historico": "David Villa",
+      "maior_jogador": "Xavi Hernández"
+    }
+  ],
+
+  "estadios": [
+    { "nome": "MetLife Stadium",        "cidade": "East Rutherford (Nova Jersey)", "pais": "EUA",    "capacidade": 82500, "jogos": ["Final", "Semifinal", "Fase de grupos"], "nota": "Palco da grande final da Copa 2026" },
+    { "nome": "Rose Bowl",              "cidade": "Pasadena (Los Angeles)",        "pais": "EUA",    "capacidade": 90888, "jogos": ["Semifinal", "Quartas", "Fase de grupos"], "nota": "Sediou a final de 1994" },
+    { "nome": "AT&T Stadium",           "cidade": "Arlington (Dallas)",            "pais": "EUA",    "capacidade": 80000, "jogos": ["Quartas", "Fase de grupos"], "nota": "Casa do Dallas Cowboys" },
+    { "nome": "SoFi Stadium",           "cidade": "Inglewood (Los Angeles)",       "pais": "EUA",    "capacidade": 70240, "jogos": ["Quartas", "Fase de grupos"], "nota": "Um dos estádios mais modernos do mundo" },
+    { "nome": "Levi's Stadium",         "cidade": "Santa Clara (San Francisco)",   "pais": "EUA",    "capacidade": 68500, "jogos": ["Fase de grupos", "Oitavas"], "nota": "Casa do San Francisco 49ers" },
+    { "nome": "Arrowhead Stadium",      "cidade": "Kansas City",                   "pais": "EUA",    "capacidade": 76416, "jogos": ["Fase de grupos", "Oitavas"], "nota": "Um dos estádios mais barulhentos dos EUA" },
+    { "nome": "Lincoln Financial Field","cidade": "Filadélfia",                    "pais": "EUA",    "capacidade": 69176, "jogos": ["Fase de grupos", "Oitavas"], "nota": "Casa do Philadelphia Eagles" },
+    { "nome": "Gillette Stadium",       "cidade": "Foxborough (Boston)",           "pais": "EUA",    "capacidade": 65878, "jogos": ["Fase de grupos"], "nota": "Casa do New England Patriots" },
+    { "nome": "Soldier Field",          "cidade": "Chicago",                       "pais": "EUA",    "capacidade": 61500, "jogos": ["Fase de grupos"], "nota": "Estádio histórico às margens do Lago Michigan" },
+    { "nome": "Hard Rock Stadium",      "cidade": "Miami Gardens (Miami)",         "pais": "EUA",    "capacidade": 65326, "jogos": ["Fase de grupos", "Oitavas"], "nota": "Casa do Miami Dolphins" },
+    { "nome": "Estádio Azteca",         "cidade": "Cidade do México",              "pais": "México", "capacidade": 87500, "jogos": ["Fase de grupos", "Oitavas"], "nota": "Único estádio a sediar três Copas do Mundo (1970, 1986, 2026)" },
+    { "nome": "Estadio Akron",          "cidade": "Guadalajara",                   "pais": "México", "capacidade": 46232, "jogos": ["Fase de grupos"], "nota": "Casa do Chivas de Guadalajara" },
+    { "nome": "Estadio BBVA",           "cidade": "Monterrey",                     "pais": "México", "capacidade": 53500, "jogos": ["Fase de grupos"], "nota": "Casa do Monterrey, com vista para a Serra Madre" },
+    { "nome": "BC Place",               "cidade": "Vancouver",                     "pais": "Canadá", "capacidade": 54500, "jogos": ["Fase de grupos", "Oitavas"], "nota": "Único estádio coberto da Copa 2026" },
+    { "nome": "BMO Field",              "cidade": "Toronto",                       "pais": "Canadá", "capacidade": 45736, "jogos": ["Fase de grupos"], "nota": "Casa do Toronto FC" },
+    { "nome": "Stade Saputo",           "cidade": "Montreal",                      "pais": "Canadá", "capacidade": 61000, "jogos": ["Fase de grupos"], "nota": "Ampliado especialmente para a Copa 2026" }
+  ],
+
+  "titulos_por_pais": {
+    "brasil":    { "titulos": 5, "anos": [1958, 1962, 1970, 1994, 2002] },
+    "alemanha":  { "titulos": 4, "anos": [1954, 1974, 1990, 2014] },
+    "italia":    { "titulos": 4, "anos": [1934, 1938, 1982, 2006] },
+    "argentina": { "titulos": 3, "anos": [1978, 1986, 2022] },
+    "franca":    { "titulos": 2, "anos": [1998, 2018] },
+    "uruguai":   { "titulos": 2, "anos": [1930, 1950] },
+    "inglaterra":{ "titulos": 1, "anos": [1966] },
+    "espanha":   { "titulos": 1, "anos": [2010] },
+    "portugal":  { "titulos": 0, "anos": [] },
+    "holanda":   { "titulos": 0, "anos": [] },
+    "belgica":   { "titulos": 0, "anos": [] },
+    "croatia":   { "titulos": 0, "anos": [] },
+    "marrocos":  { "titulos": 0, "anos": [] },
+    "japao":     { "titulos": 0, "anos": [] },
+    "coreia":    { "titulos": 0, "anos": [] },
+    "eua":       { "titulos": 0, "anos": [] },
+    "mexico":    { "titulos": 0, "anos": [] },
+    "colombia":  { "titulos": 0, "anos": [] },
+    "chile":     { "titulos": 0, "anos": [] },
+    "peru":      { "titulos": 0, "anos": [] }
+  }
+}
