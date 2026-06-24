@@ -9,3 +9,7 @@ requests==2.32.3
 numpy==1.26.4
 tokenizers==0.19.1
 huggingface-hub==0.23.4
+
+Modelo LLM Local:
+Ollama
+llama3.1:latest
