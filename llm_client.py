@@ -72,19 +72,3 @@ class _FakeMessage:
 
 def get_client(api_key: str = None) -> "LLMClient":
     return LLMClient()
-
-
-
-# RODAR USANDO A API EXTERNA CASO PREFIRA - GROQ
-
-#
-# from groq import Groq
-#
-# def get_client(api_key: str = None) -> "Groq":
-#     return Groq(api_key=api_key)
-#
-# Para reativar:
-#   1. Comente a classe LLMClient e a função get_client() acima (bloco Ollama).
-#   2. Descomente as duas linhas acima.
-#   3. Verifique se a GROQ_API_KEY está definida no arquivo .env.
-#   4. Na main, restaure a verificação da GROQ_API_KEY (também comentada).
