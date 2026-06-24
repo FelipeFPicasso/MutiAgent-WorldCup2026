@@ -12,7 +12,7 @@
 
 # Sobre o Projeto
 
-O Assistente Multiagente da Copa do Mundo 2026 é um sistema de Inteligência Artificial desenvolvido para responder perguntas sobre a história das Copas do Mundo, seleções, jogadores, estádios, grupos da Copa de 2026 e estatísticas históricas.
+O Assistente Multiagente da Copa do Mundo 2026 é um sistema de Inteligência Artificial desenvolvido para responder perguntas sobre a história das Copas do Mundo, seleções, jogadores, grupos da Copa de 2026 e estatísticas históricas.
 
 O projeto utiliza uma arquitetura baseada em agentes especializados executando um modelo LLaMA local através do Ollama, juntamente com técnicas de Retrieval-Augmented Generation (RAG), banco vetorial e ferramentas especializadas para fornecer respostas contextualizadas.
 
