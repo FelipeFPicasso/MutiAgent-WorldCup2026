@@ -5,7 +5,6 @@ from colorama import init, Fore, Style
 
 load_dotenv()
 init(autoreset=True)
-
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rag import ingest_documents
@@ -26,7 +25,6 @@ HELP_MSG = f"""
   • Qual a probabilidade de Brasil vencer a Argentina?
   • Como foi a final da Copa 2022?
   • Quantos títulos a Alemanha tem?
-
 {Fore.CYAN}Comandos:{Style.RESET_ALL}
   • {Fore.WHITE}ajuda{Style.RESET_ALL}  — mostra esta mensagem
   • {Fore.WHITE}sair{Style.RESET_ALL}   — encerra o programa
@@ -36,8 +34,7 @@ HELP_MSG = f"""
 def main():
     print(BANNER)
 
-    api_key = os.getenv("GROQ_API_KEY")  # opcional
-
+    api_key = os.getenv("GROQ_API_KEY")
 
     print(f"{Fore.CYAN}[Sistema] Inicializando base de conhecimento...{Style.RESET_ALL}")
     ingest_documents()
@@ -48,6 +45,9 @@ def main():
     print(f"\n{Fore.GREEN}[Sistema] Pronto! Digite sua pergunta sobre a Copa 2026.{Style.RESET_ALL}")
     print(HELP_MSG)
 
+    # Histórico de conversa: lista de {"role": "user"/"assistant", "content": "..."}
+    history = []
+
     while True:
         try:
             user_input = input(f"{Fore.YELLOW}Você:{Style.RESET_ALL} ").strip()
@@ -57,17 +57,21 @@ def main():
 
         if not user_input:
             continue
-
         if user_input.lower() in ("sair", "exit", "quit"):
             print(f"{Fore.YELLOW}Tamo junto, volte sempre!{Style.RESET_ALL}")
             break
-
         if user_input.lower() in ("ajuda", "help", "?"):
             print(HELP_MSG)
             continue
 
         try:
-            resposta = orchestrator.run(user_input)
+            resposta = orchestrator.run(user_input, history=history)
+
+            # Atualiza histórico (mantém só as últimas 6 trocas para não crescer demais)
+            history.append({"role": "user",      "content": user_input})
+            history.append({"role": "assistant", "content": resposta})
+            history = history[-12:]
+
             print(f"\n{Fore.GREEN}Resposta:{Style.RESET_ALL}\n")
             print(resposta)
             print(f"\n{Fore.WHITE}{'─'*55}{Style.RESET_ALL}\n")

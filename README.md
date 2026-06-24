@@ -1,160 +1,300 @@
 # Multi Agent World Cup 2026
 
-## Sobre o Projeto
+## Integrantes da Equipe
 
-O Assistente Multiagente da Copa do Mundo 2026 é um sistema de Inteligência Artificial desenvolvido para responder perguntas sobre a história das Copas do Mundo, seleções, jogadores, estádios e estatísticas históricas.
+* **Felipe Frantz Picasso**
+  GitHub: https://github.com/FelipeFPicasso
 
-O projeto utiliza uma arquitetura multiagente baseada em LLMs locais executados via Ollama, combinada com técnicas de Retrieval-Augmented Generation (RAG), banco vetorial e ferramentas especializadas para fornecer respostas contextualizadas e fundamentadas em dados.
-
----
-
-## Arquitetura do Sistema
-
-O sistema é composto por quatro componentes principais:
-
-### Orchestrator Agent
-
-Responsável por coordenar o fluxo de execução, distribuir tarefas entre os agentes especializados e consolidar os resultados.
-
-### Scout Agent
-
-Especializado na recuperação de informações históricas através do mecanismo RAG e da base vetorial.
-
-### Tactical Agent
-
-Responsável pela análise de dados, cálculos estatísticos e utilização das ferramentas especializadas.
-
-### Narrator Agent
-
-Gera a resposta final em linguagem natural utilizando o contexto produzido pelos demais agentes.
+* **Guilherme Reginato da Silva**
+  GitHub: https://github.com/Guilherme196928
 
 ---
 
-## Tecnologias Utilizadas
+# Sobre o Projeto
 
-* Python 3
-* Ollama
-* LLaMA 3.2 (modelo local)
-* ChromaDB
-* Sentence Transformers
-* RAG (Retrieval-Augmented Generation)
-* MCP (implementação acadêmica simplificada)
-* Colorama
-* Requests
+O Assistente Multiagente da Copa do Mundo 2026 é um sistema de Inteligência Artificial desenvolvido para responder perguntas sobre a história das Copas do Mundo, seleções, jogadores, estádios, grupos da Copa de 2026 e estatísticas históricas.
+
+O projeto utiliza uma arquitetura baseada em agentes especializados executando um modelo LLaMA local através do Ollama, juntamente com técnicas de Retrieval-Augmented Generation (RAG), banco vetorial e ferramentas especializadas para fornecer respostas contextualizadas.
 
 ---
 
-## Funcionalidades
+# Problema Escolhido
 
-### Base de Conhecimento Vetorial (RAG)
+A Copa do Mundo reúne uma grande quantidade de informações históricas e estatísticas. Consultar essas informações manualmente pode ser demorado, enquanto modelos de linguagem utilizados isoladamente podem gerar respostas incorretas ou sem embasamento.
 
-O sistema utiliza documentos históricos sobre a Copa do Mundo que são transformados em embeddings e armazenados no ChromaDB para recuperação semântica.
-
-### Dataset Estruturado
-
-As informações históricas são carregadas a partir de um dataset JSON contendo:
-
-* Países campeões
-* Títulos por seleção
-* Artilheiros históricos
-* Estádios da Copa de 2026
-* Conquistas por edição
-* Estatísticas históricas
-
-Eliminando a necessidade de dados "chumbados" diretamente no código.
-
-### Ferramentas Especializadas
-
-#### Busca na Base de Conhecimento
-
-Recupera informações relevantes da base vetorial utilizando similaridade semântica.
-
-#### Probabilidade de Vitória
-
-Calcula probabilidades simplificadas com base no histórico de títulos das seleções.
-
-#### Filtros Estatísticos
-
-Permite consultar:
-
-* Campeões mundiais
-* Maiores artilheiros
-* Estádios da Copa 2026
+Assim, o projeto busca unir recuperação de informações e inteligência artificial para fornecer respostas mais precisas e fundamentadas.
 
 ---
 
-## MCP Simplificado
+# Objetivo da Solução
 
-O projeto implementa uma camada de comunicação inspirada nos princípios do Model Context Protocol (MCP), utilizando mensagens padronizadas entre os agentes por meio de:
+Desenvolver um assistente inteligente capaz de responder perguntas sobre a Copa do Mundo utilizando:
+
+* Arquitetura Multiagente;
+* Modelos LLaMA executados localmente;
+* Retrieval-Augmented Generation (RAG);
+* Banco Vetorial;
+* Ferramentas especializadas para consultas estatísticas.
+
+---
+
+# Arquitetura Multiagente
+
+O sistema é composto por quatro agentes especializados:
+
+```
+Usuário
+   │
+   ▼
+Orchestrator
+   │
+   ├────────────► Scout (RAG)
+   │
+   ├────────────► Tactical (Tools)
+   │
+   ▼
+Narrator
+   │
+   ▼
+Resposta Final
+```
+
+---
+
+# Papel de Cada Agente
+
+## Orchestrator Agent
+
+Coordena toda a execução do sistema.
+
+É responsável por:
+
+* receber a pergunta do usuário;
+* decidir quais agentes serão utilizados;
+* distribuir as tarefas;
+* reunir os resultados.
+
+---
+
+## Scout Agent
+
+Responsável pela recuperação de informações utilizando RAG.
+
+Suas funções são:
+
+* consultar a base vetorial;
+* recuperar documentos relevantes;
+* enviar o contexto para os demais agentes.
+
+---
+
+## Tactical Agent
+
+Executa análises especializadas utilizando ferramentas.
+
+É responsável por:
+
+* cálculos de probabilidade;
+* consultas estatísticas;
+* análises históricas;
+* processamento de dados estruturados.
+
+---
+
+## Narrator Agent
+
+Recebe todas as informações produzidas pelos demais agentes e gera uma resposta final em linguagem natural utilizando o modelo LLaMA executado localmente.
+
+---
+
+# Ferramentas Disponíveis
+
+O projeto possui três ferramentas principais.
+
+## search_knowledge_base()
+
+Realiza busca semântica na base vetorial utilizando embeddings.
+
+Utilizada pelo Scout Agent.
+
+---
+
+## calculate_win_probability()
+
+Calcula uma probabilidade simplificada baseada no histórico de títulos das seleções.
+
+Exemplo:
+
+* Brasil × Argentina
+
+---
+
+## filter_stats()
+
+Consulta informações estruturadas do dataset.
+
+Permite responder perguntas sobre:
+
+* Campeões;
+* Artilheiros;
+* Títulos;
+* Estádios da Copa 2026.
+
+---
+
+# Como o MCP foi Utilizado
+
+O projeto implementa uma versão simplificada do Model Context Protocol (MCP).
+
+A comunicação entre os agentes ocorre através de mensagens padronizadas utilizando:
 
 * MCPMessage
 * MCPResponse
 * MCPBus
 
-Embora não utilize uma implementação oficial do protocolo MCP, a solução adota seus conceitos fundamentais de troca estruturada de contexto e coordenação entre agentes.
+O Orchestrator envia mensagens aos agentes especializados, que processam a solicitação e retornam respostas estruturadas.
+
+Essa abordagem facilita a coordenação entre agentes e separa claramente as responsabilidades de cada componente.
 
 ---
 
-## Execução Local
+# Estratégia de RAG
 
-Diferentemente de soluções dependentes exclusivamente de APIs externas, este projeto executa modelos de linguagem localmente através do Ollama.
+A estratégia utilizada segue as seguintes etapas:
 
-Exemplo de modelo utilizado:
-
-* llama3.2:3b
-
-Isso permite:
-
-* Funcionamento offline após instalação do modelo
-* Menor dependência de serviços externos
-* Maior controle sobre os dados processados
-* Redução de custos operacionais
+1. Leitura dos arquivos TXT da base de conhecimento.
+2. Divisão dos documentos em pequenos trechos (chunks).
+3. Geração dos embeddings utilizando Sentence Transformers.
+4. Armazenamento dos vetores no ChromaDB.
+5. Busca semântica dos trechos mais relevantes.
+6. Envio do contexto recuperado ao modelo LLaMA para geração da resposta.
 
 ---
 
-## Fluxo de Funcionamento
+# Base de Conhecimento
 
-1. O usuário envia uma pergunta pelo terminal.
-2. O Orchestrator recebe a solicitação.
-3. O Scout Agent recupera contexto relevante via RAG.
-4. O Tactical Agent executa análises e ferramentas especializadas.
-5. O Narrator Agent gera a resposta final.
-6. A resposta é apresentada ao usuário.
+A base de conhecimento foi construída especificamente para este projeto.
 
----
+Ela é composta por documentos TXT contendo informações sobre:
 
-## Exemplos de Perguntas
+* História das Copas do Mundo;
+* Campeões mundiais;
+* Artilheiros históricos;
+* Estádios da Copa de 2026;
+* Grupos da Copa de 2026;
+* Informações gerais da Copa de 2026.
 
-* Qual é o histórico do Brasil na Copa do Mundo?
-* Quem são os maiores artilheiros da história?
-* Quais serão os estádios da Copa 2026?
-* Qual a probabilidade de o Brasil vencer a Argentina?
-* Como foi a final da Copa do Mundo de 2022?
-* Quantos títulos a Alemanha possui?
+Além disso, o projeto utiliza um dataset JSON contendo informações estruturadas como títulos, campeões, artilheiros e estádios, permitindo consultas rápidas sem necessidade de recuperação vetorial.
 
 ---
 
-## Objetivo Acadêmico
+# Embeddings e Armazenamento Vetorial
 
-Este projeto foi desenvolvido para demonstrar a integração de:
+## Modelo de Embeddings
 
-* Sistemas Multiagentes
-* Modelos de Linguagem de Grande Escala (LLMs)
-* Retrieval-Augmented Generation (RAG)
-* Bancos Vetoriais
-* Ferramentas Especializadas
-* Comunicação baseada em MCP
+```
+sentence-transformers
+all-MiniLM-L6-v2
+```
 
-aplicados ao domínio histórico e estatístico da Copa do Mundo FIFA.
+## Banco Vetorial
 
-----
+```
+ChromaDB
+```
 
-# Instalação e Execução
+Os embeddings representam semanticamente os documentos da base de conhecimento, permitindo recuperar informações relevantes mesmo quando a pergunta utiliza palavras diferentes das presentes no texto original.
 
-## 1. Clonar o Repositório
+---
+
+# Modelo Local Utilizado
+
+O sistema utiliza o modelo:
+
+```
+llama3.2:3b
+```
+
+executado localmente através do Ollama.
+
+Essa abordagem permite:
+
+* funcionamento offline após instalação do modelo;
+* menor dependência de APIs externas;
+* maior controle sobre os dados processados;
+* redução de custos operacionais.
+
+---
+
+# Tecnologias Utilizadas
+
+* Python 3
+* Ollama
+* LLaMA 3.2
+* ChromaDB
+* Sentence Transformers
+* Transformers
+* Torch
+* RAG
+* MCP
+* Requests
+* Colorama
+
+---
+
+# Estrutura do Projeto
+
+```
+MultiAgent-WorldCup2026/
+│
+├── agents/
+│   ├── orchestrator.py
+│   ├── scout.py
+│   ├── tactical.py
+│   └── narrator.py
+│
+├── rag/
+│   ├── retriever.py
+│   └── __init__.py
+│
+├── tools/
+│
+├── mcp/
+│
+├── data/
+│   ├── knowledge_base/
+│   ├── copa_dataset.json
+│   └── chroma_db/
+│
+├── llm_client.py
+├── main.py
+└── requirements.txt
+```
+
+---
+
+# Dependências
+
+```
+groq==0.9.0
+chromadb==0.5.0
+sentence-transformers==3.0.1
+transformers==4.41.2
+torch
+python-dotenv==1.0.1
+requests==2.32.3
+colorama==0.4.6
+```
+
+---
+
+# Instalação
+
+## Clonar o Repositório
 
 ```bash
 git clone https://github.com/FelipeFPicasso/MutiAgent-WorldCup2026.git
+
 cd MutiAgent-WorldCup2026
 ```
 
@@ -162,149 +302,194 @@ cd MutiAgent-WorldCup2026
 
 # Ubuntu / Linux
 
-## 1. Criar e ativar ambiente virtual
+## Criar ambiente virtual
 
 ```bash
 python3 -m venv .venv
+
 source .venv/bin/activate
 ```
 
-## 2. Atualizar o pip
+## Atualizar pip
 
 ```bash
 pip install --upgrade pip
 ```
 
-## 3. Instalar as dependências
-
-Caso exista o arquivo `requirements.txt`:
+## Instalar dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Ou instale manualmente:
-
-```bash
-pip install python-dotenv colorama requests chromadb sentence-transformers transformers torch
-```
-
-## 4. Instalar o Ollama
-
-Instale o Ollama seguindo as instruções oficiais:
+## Instalar Ollama
 
 https://ollama.com
 
-Verifique a instalação:
+Verificar instalação:
 
 ```bash
 ollama --version
 ```
 
-## 5. Baixar o modelo local
-
-O projeto foi configurado para utilizar:
+## Baixar o modelo
 
 ```bash
 ollama pull llama3.2:3b
-```
-
-Verifique se o modelo foi instalado:
-
-```bash
-ollama list
-```
-
-Saída esperada:
-
-```text
-NAME
-llama3.2:3b
 ```
 
 ---
 
 # Windows
 
-## 1. Criar e ativar ambiente virtual
+## Criar ambiente virtual
 
 ```powershell
 python -m venv .venv
+
 .venv\Scripts\activate
 ```
 
-## 2. Atualizar o pip
+Caso a execução de scripts esteja bloqueada:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+## Atualizar pip
 
 ```powershell
 python -m pip install --upgrade pip
 ```
 
-## 3. Instalar as dependências
-
-Opção de instalar o arquivo `requirements.txt`:
+## Instalar dependências
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-Caso retorne alguma falha ou prefia, instale manualmente:
-
-```powershell
-pip install python-dotenv colorama requests chromadb sentence-transformers transformers torch
-```
-
-## 4. Instalar o Ollama
-
-Baixe e instale:
+## Instalar Ollama
 
 https://ollama.com/download
 
-Verifique a instalação:
+Verificar:
 
 ```powershell
 ollama --version
 ```
 
-## 5. Baixar o modelo local
+## Baixar o modelo
 
 ```powershell
 ollama pull llama3.2:3b
-```
-
-Verifique a instalação:
-
-```powershell
-ollama list
 ```
 
 ---
 
 # Execução
 
-## 1. Iniciar o Ollama
-
-Abra um terminal e execute:
+## Iniciar o Ollama
 
 ```bash
 ollama serve
 ```
 
-## 2. Executar o sistema
+## Executar o projeto
 
-Linux:
+Linux
 
 ```bash
 python3 main.py
 ```
 
-Windows:
+Windows
 
 ```powershell
 python main.py
 ```
------
-## Desenvolvedores:
 
-* Felipe Frantz Picasso -> https://github.com/FelipeFPicasso
-* Guilherme Reginato da Silva -> https://github.com/Guilherme196928 
+---
 
+# Exemplo de Execução
+
+```text
+$ python main.py
+
+    ASSISTENTE MULTIAGENTE — COPA DO MUNDO 2026
+  Powered by LLaMA (local via Ollama) · RAG · MCP · Agentes Especializados
+=======================================================
+
+[Sistema] Pronto! Digite sua pergunta sobre a Copa 2026.
+
+Exemplos de perguntas:
+ • Qual é o histórico do Brasil na Copa do Mundo?
+ • Quem são os maiores artilheiros da história?
+ • Quais são os estádios da Copa 2026?
+ • Qual a probabilidade de Brasil vencer a Argentina?
+ • Como foi a final da Copa 2022?
+ • Quantos títulos a Alemanha tem?
+
+Comandos:
+ • ajuda
+ • sair
+```
+
+## Exemplo 1
+
+```text
+Você: Qual país possui mais títulos?
+
+[Orquestrador] Dados estruturados encontrados — bypassing RAG.
+[Narrador] Gerando resposta final...
+
+Resposta:
+
+O Brasil possui o maior número de títulos da Copa do Mundo, com cinco conquistas.
+```
+
+---
+
+## Exemplo 2
+
+```text
+Você: A Argentina tem quantos títulos?
+
+[Orquestrador] Dados estruturados encontrados — bypassing RAG.
+[Narrador] Gerando resposta final...
+
+Resposta:
+
+A Argentina possui três títulos mundiais, conquistados em 1978, 1986 e 2022.
+```
+
+---
+
+## Exemplo 3
+
+```text
+Você: Quantos gols o Mbappé tem na Copa?
+
+[Scout] Buscando na base vetorial...
+[Tático] Analisando dados...
+[Narrador] Gerando resposta final...
+
+Resposta:
+
+Kylian Mbappé marcou 12 gols em Copas do Mundo, participando das edições de 2018 e 2022.
+```
+
+---
+
+# Objetivo Acadêmico
+
+Este projeto foi desenvolvido para demonstrar a integração entre:
+
+* Sistemas Multiagentes;
+* Modelos de Linguagem (LLMs);
+* Retrieval-Augmented Generation (RAG);
+* Banco Vetorial;
+* Embeddings;
+* Ferramentas Especializadas;
+* Comunicação inspirada no Model Context Protocol (MCP).
+
+A solução demonstra como diferentes agentes especializados podem cooperar para produzir respostas contextualizadas e fundamentadas utilizando um modelo de linguagem executado localmente.

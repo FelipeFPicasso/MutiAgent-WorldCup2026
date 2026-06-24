@@ -1,7 +1,7 @@
 import requests
 
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "llama3.2:3b"
+OLLAMA_MODEL = "llama3.1:latest"
 
 
 class LLMClient:

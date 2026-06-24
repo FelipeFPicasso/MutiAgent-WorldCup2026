@@ -1,0 +1,71 @@
+GRUPO A
+México
+Coreia do Sul
+República Tcheca
+África do Sul
+
+GRUPO B
+Suíça
+Canadá
+Bósnia e Herzegovina
+Catar
+
+GRUPO C
+Brasil
+Marrocos
+Escócia
+Haiti
+
+GRUPO D
+Estados Unidos
+Austrália
+Paraguai
+Turquia
+
+GRUPO E
+Alemanha
+Costa do Marfim
+Equador
+Curaçau
+
+GRUPO F
+Holanda
+Japão
+Suécia
+Tunísia
+
+GRUPO G
+Egito
+Irã
+Bélgica
+Nova Zelândia
+
+GRUPO H
+Espanha
+Uruguai
+Cabo Verde
+Arábia Saudita
+
+GRUPO I
+França
+Noruega
+Senegal
+Iraque
+
+GRUPO J
+Argentina
+Áustria
+Argélia
+Jordânia
+
+GRUPO K
+Colômbia
+Portugal
+RD do Congo
+Uzbequistão
+
+GRUPO L
+Inglaterra
+Gana
+Croácia
+Panamá
