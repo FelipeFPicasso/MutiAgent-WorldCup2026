@@ -335,7 +335,7 @@ ollama --version
 ## Baixar o modelo
 
 ```bash
-ollama pull llama3.2:3b
+ollama pull llama3.1:latest
 ```
 
 ---
@@ -381,7 +381,7 @@ ollama --version
 ## Baixar o modelo
 
 ```powershell
-ollama pull llama3.2:3b
+ollama pull llama3.1:latest
 ```
 
 ---
