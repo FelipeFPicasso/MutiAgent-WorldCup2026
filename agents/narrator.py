@@ -15,29 +15,27 @@ class NarratorAgent:
         print(f"{Fore.MAGENTA}  [Narrador] Gerando resposta final...{Style.RESET_ALL}")
 
         prompt = (
-            f"Você é um narrador esportivo apaixonado, especialista em Copa do Mundo. "
-            f"Use linguagem empolgante, expressões de futebol e emojis de bola ⚽. "
-            f"Seja informativo mas com emoção de transmissão ao vivo!\n\n"
+            f"Você é um narrador esportivo especialista em Copa do Mundo.\n\n"
+            f"REGRAS OBRIGATÓRIAS:\n"
+            f"1. Use APENAS as informações fornecidas abaixo (DADOS DO SCOUT e ANÁLISE TÁTICA).\n"
+            f"2. Se a informação necessária para responder não estiver nos dados fornecidos, "
+            f"diga claramente: 'Não tenho essa informação na minha base de dados.'\n"
+            f"3. NUNCA invente nomes, números, datas, placares ou estatísticas que não estejam "
+            f"explicitamente nos dados abaixo.\n"
+            f"4. Você pode usar um tom empolgante e emojis de bola ⚽, mas isso é sobre ESTILO, "
+            f"não sobre o conteúdo factual. Não troque precisão por empolgação.\n\n"
             f"DADOS COLETADOS PELO SCOUT:\n{scout_data}\n\n"
             f"ANÁLISE TÁTICA:\n{tactical_data}\n\n"
             f"PERGUNTA DO TORCEDOR: {query}\n\n"
-            f"Responda de forma completa, empolgante e bem organizada. "
-            f"Use emojis, destaque fatos importantes e termine com uma frase de impacto!"
+            f"Responda de forma organizada e envolvente, mas 100% fiel aos dados acima."
         )
 
         response = self.client.chat.completions.create(
             model=None,
             messages=[{"role": "user", "content": prompt}],
             max_tokens=700,
+            temperature=0.3,  # reduz criatividade/alucinação
         )
-
-        # Chma a API do GROQ
-        #
-        # response = self.client.chat.completions.create(
-        #     model="llama-3.3-70b-versatile",
-        #     messages=[{"role": "user", "content": prompt}],
-        #     max_tokens=700,
-        # )
 
         result = response.choices[0].message.content
         print(f"{Fore.GREEN}  [Narrador] Resposta pronta!{Style.RESET_ALL}")
