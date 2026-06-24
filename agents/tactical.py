@@ -43,14 +43,6 @@ class TacticalAgent:
             max_tokens=500,
         )
 
-        # Chama a API do GROQ
-        #
-        # response = self.client.chat.completions.create(
-        #     model="llama-3.3-70b-versatile",
-        #     messages=[{"role": "user", "content": prompt}],
-        #     max_tokens=500,
-        # )
-
         result = response.choices[0].message.content
         print(f"{Fore.GREEN}  [Tático] Análise concluída.{Style.RESET_ALL}")
         return MCPResponse(sender=self.name, status="ok", result=result)

@@ -45,7 +45,6 @@ def main():
     print(f"\n{Fore.GREEN}[Sistema] Pronto! Digite sua pergunta sobre a Copa 2026.{Style.RESET_ALL}")
     print(HELP_MSG)
 
-    # Histórico de conversa: lista de {"role": "user"/"assistant", "content": "..."}
     history = []
 
     while True:
@@ -67,7 +66,6 @@ def main():
         try:
             resposta = orchestrator.run(user_input, history=history)
 
-            # Atualiza histórico (mantém só as últimas 6 trocas para não crescer demais)
             history.append({"role": "user",      "content": user_input})
             history.append({"role": "assistant", "content": resposta})
             history = history[-12:]

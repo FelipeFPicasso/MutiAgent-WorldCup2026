@@ -9,7 +9,6 @@ class LocalGroq:
         class Completions:
             @staticmethod
             def create(model: str, messages: list[dict], max_tokens: int = 200):
-                # Build a simple mock response by echoing the prompt's beginning.
                 user_content = ""
                 if messages and isinstance(messages, list):
                     user_content = messages[0].get("content", "")

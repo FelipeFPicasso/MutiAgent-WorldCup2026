@@ -6,7 +6,6 @@ from tools import search_knowledge_base
 class ScoutAgent:
 
     def __init__(self, client=None):
-        # client não é mais necessário aqui, mas mantido por compatibilidade
         self.client = client
         self.name = "scout"
 
@@ -14,8 +13,6 @@ class ScoutAgent:
         query = message.payload.get("query", "")
         print(f"{Fore.CYAN}  [Scout] Buscando na base vetorial: '{query}'{Style.RESET_ALL}")
 
-        # Apenas recupera o contexto cru do RAG — SEM chamar o LLM aqui.
-        # O Scout é uma camada de retrieval, não de geração.
         context = search_knowledge_base(query)
 
         if not context or not context.strip():
