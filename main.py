@@ -36,17 +36,8 @@ HELP_MSG = f"""
 def main():
     print(BANNER)
 
-    # --- ATIVO: modelo local via Ollama, não requer chave de API ---
-    # 'api_key' é repassado apenas por compatibilidade com a assinatura
-    # anterior do OrchestratorAgent; o cliente local (llm_client.py) o ignora.
-    api_key = os.getenv("GROQ_API_KEY")  # opcional; mantido por compatibilidade
+    api_key = os.getenv("GROQ_API_KEY")  # opcional
 
-    # --- INATIVO: verificação obrigatória da GROQ_API_KEY (API externa) ---
-    # if not api_key:
-    #     print(f"{Fore.RED}[ERRO] GROQ_API_KEY não encontrada!")
-    #     print(f"Crie um arquivo .env com: GROQ_API_KEY=sua_chave_aqui")
-    #     print(f"Obtenha sua chave gratuita em: https://console.groq.com{Style.RESET_ALL}")
-    #     sys.exit(1)
 
     print(f"{Fore.CYAN}[Sistema] Inicializando base de conhecimento...{Style.RESET_ALL}")
     ingest_documents()

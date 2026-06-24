@@ -4,10 +4,6 @@ from tools import calculate_win_probability, filter_stats
 
 
 class TacticalAgent:
-    """
-    Agente responsável por análise tática, confrontos diretos
-    e probabilidades de resultados.
-    """
 
     def __init__(self, client):
         self.client = client
@@ -41,14 +37,14 @@ class TacticalAgent:
             f"Forneça uma análise tática objetiva em até 3 parágrafos."
         )
 
-        # --- ATIVO: modelo local via Ollama (definido em llm_client.py) ---
         response = self.client.chat.completions.create(
             model=None,  # usa o modelo padrão configurado em llm_client.py (ex: llama3.1)
             messages=[{"role": "user", "content": prompt}],
             max_tokens=500,
         )
 
-        # --- INATIVO: chamada original via API Groq ---
+        # Chama a API do GROQ
+        #
         # response = self.client.chat.completions.create(
         #     model="llama-3.3-70b-versatile",
         #     messages=[{"role": "user", "content": prompt}],

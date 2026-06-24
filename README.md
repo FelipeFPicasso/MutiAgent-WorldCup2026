@@ -148,51 +148,163 @@ Este projeto foi desenvolvido para demonstrar a integração de:
 aplicados ao domínio histórico e estatístico da Copa do Mundo FIFA.
 
 ----
-## Instalação e execução:
 
-### Instalação
-1.  Clonar o repositório -> https://github.com/FelipeFPicasso/MutiAgent-WorldCup2026.git
+# Instalação e Execução
 
-2. Criar Ambiente Virtual:
-    * Linux/macOS:
+## 1. Clonar o Repositório
 
-        python3 -m venv venv
-        source venv/bin/activate
+```bash
+git clone https://github.com/FelipeFPicasso/MutiAgent-WorldCup2026.git
+cd MutiAgent-WorldCup2026
+```
 
-    * Windows:
+---
 
-        python -m venv venv venv\Scripts\activate
+# Ubuntu / Linux
 
-3. Instalar Dependências:
+## 1. Criar e ativar ambiente virtual
 
-    * pip install -r requirements.txt
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-4. Instalar o Ollama:
+## 2. Atualizar o pip
 
-    * Baixe e instale o Ollama -> https://ollama.com
+```bash
+pip install --upgrade pip
+```
 
+## 3. Instalar as dependências
 
-    * Verifique a instalação -> ollama - - version
+Caso exista o arquivo `requirements.txt`:
 
-5. Baixar o Modelo Local:
+```bash
+pip install -r requirements.txt
+```
 
-    * O projeto foi configurado para utilizar o modelo -> ollama pull llama3.2:3b
+Ou instale manualmente:
 
-    * Verifique se o modelo foi instalado -> ollama list
+```bash
+pip install python-dotenv colorama requests chromadb sentence-transformers transformers torch
+```
 
-    * Saída esperada:
+## 4. Instalar o Ollama
 
-        *   NAME
-            llama3.2:3b
+Instale o Ollama seguindo as instruções oficiais:
 
-### Execução:
-    
-1. Iniciar o Ollama (Terminal) -> ollama serve
-2. Executar o Assistente
+https://ollama.com
 
-    Na pasta raiz do projeto (terminal) -> python3 main.py ou python main.py
+Verifique a instalação:
+
+```bash
+ollama --version
+```
+
+## 5. Baixar o modelo local
+
+O projeto foi configurado para utilizar:
+
+```bash
+ollama pull llama3.2:3b
+```
+
+Verifique se o modelo foi instalado:
+
+```bash
+ollama list
+```
+
+Saída esperada:
+
+```text
+NAME
+llama3.2:3b
+```
+
+---
+
+# Windows
+
+## 1. Criar e ativar ambiente virtual
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+## 2. Atualizar o pip
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+## 3. Instalar as dependências
+
+Opção de instalar o arquivo `requirements.txt`:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Caso retorne alguma falha ou prefia, instale manualmente:
+
+```powershell
+pip install python-dotenv colorama requests chromadb sentence-transformers transformers torch
+```
+
+## 4. Instalar o Ollama
+
+Baixe e instale:
+
+https://ollama.com/download
+
+Verifique a instalação:
+
+```powershell
+ollama --version
+```
+
+## 5. Baixar o modelo local
+
+```powershell
+ollama pull llama3.2:3b
+```
+
+Verifique a instalação:
+
+```powershell
+ollama list
+```
+
+---
+
+# Execução
+
+## 1. Iniciar o Ollama
+
+Abra um terminal e execute:
+
+```bash
+ollama serve
+```
+
+## 2. Executar o sistema
+
+Linux:
+
+```bash
+python3 main.py
+```
+
+Windows:
+
+```powershell
+python main.py
+```
 -----
 ## Desenvolvedores:
 
 * Felipe Frantz Picasso -> https://github.com/FelipeFPicasso
 * Guilherme Reginato da Silva -> https://github.com/Guilherme196928 
+

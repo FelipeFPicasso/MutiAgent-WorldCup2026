@@ -16,13 +16,8 @@ class OrchestratorAgent:
     """
 
     def __init__(self, api_key: str = None):
-        # --- ATIVO: modelo local via Ollama ---
-        # 'api_key' é mantido apenas por compatibilidade de assinatura e não
-        # é utilizado pelo cliente local.
-        self.client = get_client(api_key=api_key)
 
-        # --- INATIVO: cliente da API Groq (nuvem) ---
-        # self.client = Groq(api_key=api_key)
+        self.client = get_client(api_key=api_key)
 
         self.bus = MCPBus()
 

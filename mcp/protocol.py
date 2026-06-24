@@ -19,10 +19,6 @@ class MCPResponse:
 
 
 class MCPBus:
-    """
-    Barramento central de comunicação entre agentes via MCP.
-    Roteia mensagens e mantém log das interações.
-    """
 
     def __init__(self):
         self._handlers: dict[str, callable] = {}

@@ -1,17 +1,5 @@
 import requests
 
-
-#
-# Pré-requisitos:
-#   1. Instalar o Ollama: https://ollama.com
-#   2. Baixar um modelo local, por exemplo:
-#        ollama pull llama3.1
-#      (ou llama3.2, llama3, mistral, etc.)
-#   3. O serviço do Ollama deve estar rodando localmente
-#      (por padrão em http://localhost:11434)
-#
-# Não é necessária nenhuma chave de API.
-
 OLLAMA_BASE_URL = "http://localhost:11434"
 OLLAMA_MODEL = "llama3.2:3b"
 
@@ -67,7 +55,6 @@ class _Completions:
 
 
 class _FakeResponse:
-    """Imita a estrutura de resposta da API da Groq/OpenAI."""
 
     def __init__(self, content: str):
         self.choices = [_FakeChoice(content)]
@@ -84,19 +71,12 @@ class _FakeMessage:
 
 
 def get_client(api_key: str = None) -> "LLMClient":
-    """
-    Ponto único de criação do cliente LLM usado pelo OrchestratorAgent.
-
-    O parâmetro api_key é mantido por compatibilidade com a assinatura
-    anterior (OrchestratorAgent(api_key=...)), mas não é utilizado pelo
-    Ollama. Caso o projeto volte a usar a Groq, descomente o bloco abaixo.
-    """
     return LLMClient()
 
 
-# =============================================================================
-# GROQ (API EXTERNA) — INATIVO / MANTIDO COMO REFERÊNCIA
-# =============================================================================
+
+# RODAR USANDO A API EXTERNA CASO PREFIRA - GROQ
+
 #
 # from groq import Groq
 #
@@ -106,6 +86,5 @@ def get_client(api_key: str = None) -> "LLMClient":
 # Para reativar:
 #   1. Comente a classe LLMClient e a função get_client() acima (bloco Ollama).
 #   2. Descomente as duas linhas acima.
-#   3. Garanta que GROQ_API_KEY esteja definida no arquivo .env.
-#   4. Em main.py, restaure a verificação de GROQ_API_KEY (também comentada).
-# =============================================================================
+#   3. Verifique se a GROQ_API_KEY está definida no arquivo .env.
+#   4. Na main, restaure a verificação da GROQ_API_KEY (também comentada).

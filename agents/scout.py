@@ -4,10 +4,6 @@ from tools import search_knowledge_base
 
 
 class ScoutAgent:
-    """
-    Agente responsável por buscar informações relevantes
-    na base de conhecimento via RAG.
-    """
 
     def __init__(self, client):
         self.client = client
@@ -34,7 +30,8 @@ class ScoutAgent:
             max_tokens=400,
         )
 
-        # --- INATIVO: chamada original via API Groq ---
+        # Chama a API do GROQ
+        #
         # response = self.client.chat.completions.create(
         #     model="llama-3.3-70b-versatile",
         #     messages=[{"role": "user", "content": prompt}],

@@ -8,7 +8,6 @@ from rag import retrieve
 _DATASET_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "copa_dataset.json")
 
 def _load_dataset() -> dict:
-    """Carrega o dataset JSON uma única vez (lazy singleton)."""
     if not hasattr(_load_dataset, "_cache"):
         with open(_DATASET_PATH, "r", encoding="utf-8") as f:
             _load_dataset._cache = json.load(f)
@@ -16,12 +15,10 @@ def _load_dataset() -> dict:
 
 
 def _normalize(text: str) -> str:
-    """Remove acentos e converte para minúsculas para comparações flexíveis."""
     return unicodedata.normalize("NFD", text).encode("ascii", "ignore").decode().lower()
 
 
 def search_knowledge_base(query: str, n: int = 3) -> str:
-    """Busca na base vetorial e retorna os trechos mais relevantes."""
     docs = retrieve(query, n_results=n)
     if not docs:
         return "Nenhuma informação encontrada na base de conhecimento."
@@ -29,10 +26,7 @@ def search_knowledge_base(query: str, n: int = 3) -> str:
 
 
 def calculate_win_probability(team_a: str, team_b: str) -> str:
-    """
-    Estima probabilidade de vitória com base em títulos históricos.
-    Os dados são carregados do dataset JSON (copa_dataset.json).
-    """
+    
     dataset = _load_dataset()
     titulos_db = dataset.get("titulos_por_pais", {})
 
@@ -72,10 +66,7 @@ def calculate_win_probability(team_a: str, team_b: str) -> str:
 
 
 def filter_stats(category: str) -> str:
-    """
-    Retorna estatísticas filtradas por categoria.
-    Categorias disponíveis: artilheiros, campeões, estádios.
-    """
+
     dataset = _load_dataset()
     key = _normalize(category)
 

@@ -25,14 +25,14 @@ class NarratorAgent:
             f"Use emojis, destaque fatos importantes e termine com uma frase de impacto!"
         )
 
-        # --- ATIVO: modelo local via Ollama (definido em llm_client.py) ---
         response = self.client.chat.completions.create(
-            model=None,  # usa o modelo padrão configurado em llm_client.py (ex: llama3.1)
+            model=None,
             messages=[{"role": "user", "content": prompt}],
             max_tokens=700,
         )
 
-        # --- INATIVO: chamada original via API Groq ---
+        # Chma a API do GROQ
+        #
         # response = self.client.chat.completions.create(
         #     model="llama-3.3-70b-versatile",
         #     messages=[{"role": "user", "content": prompt}],
