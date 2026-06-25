@@ -116,17 +116,6 @@ O projeto possui três ferramentas principais.
 Realiza busca semântica na base vetorial utilizando embeddings.
 
 Utilizada pelo Scout Agent.
-
----
-
-## calculate_win_probability()
-
-Calcula uma probabilidade simplificada baseada no histórico de títulos das seleções.
-
-Exemplo:
-
-* Brasil × Argentina
-
 ---
 
 ## filter_stats()
