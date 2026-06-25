@@ -409,12 +409,10 @@ $ python main.py
 [Sistema] Pronto! Digite sua pergunta sobre a Copa 2026.
 
 Exemplos de perguntas:
- • Qual é o histórico do Brasil na Copa do Mundo?
- • Quem são os maiores artilheiros da história?
- • Quais são os estádios da Copa 2026?
- • Qual a probabilidade de Brasil vencer a Argentina?
- • Como foi a final da Copa 2022?
- • Quantos títulos a Alemanha tem?
+  • Qual é o histórico do Brasil na Copa do Mundo?
+  • Quem foi campeão da Copa de 2022?
+  • Quantos títulos a Alemanha tem?
+  • Quantos gols Messi tem em copas do mundo?
 
 Comandos:
  • ajuda
