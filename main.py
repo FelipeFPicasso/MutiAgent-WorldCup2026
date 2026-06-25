@@ -20,11 +20,9 @@ BANNER = f"""
 HELP_MSG = f"""
 {Fore.CYAN}Exemplos de perguntas:{Style.RESET_ALL}
   • Qual é o histórico do Brasil na Copa do Mundo?
-  • Quem são os maiores artilheiros da história?
-  • Quais são os estádios da Copa 2026?
-  • Qual a probabilidade de Brasil vencer a Argentina?
-  • Como foi a final da Copa 2022?
+  • Quem foi campeão da Copa de 2022?
   • Quantos títulos a Alemanha tem?
+  • Quantos gols Messi tem em copas do mundo?
 {Fore.CYAN}Comandos:{Style.RESET_ALL}
   • {Fore.WHITE}ajuda{Style.RESET_ALL}  — mostra esta mensagem
   • {Fore.WHITE}sair{Style.RESET_ALL}   — encerra o programa
