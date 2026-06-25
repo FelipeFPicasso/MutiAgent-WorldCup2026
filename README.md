@@ -126,8 +126,7 @@ Permite responder perguntas sobre:
 
 * Campeões;
 * Artilheiros;
-* Títulos;
-* Estádios da Copa 2026.
+* Títulos.
 
 ---
 
@@ -169,7 +168,6 @@ Ela é composta por documentos TXT contendo informações sobre:
 * História das Copas do Mundo;
 * Campeões mundiais;
 * Artilheiros históricos;
-* Estádios da Copa de 2026;
 * Grupos da Copa de 2026;
 * Informações gerais da Copa de 2026.
 
